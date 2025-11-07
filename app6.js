@@ -41,6 +41,10 @@ app.get("/janken", (req, res) => {
   let hand = req.query.hand;
   let win = Number( req.query.win );
   let total = Number( req.query.total );
+
+  if(isNaN(win)) win = 0;
+  if(isNaN(total)) total = 0;
+
   console.log( {hand, win, total});
   const num = Math.floor( Math.random() * 3 + 1 );
   let cpu = '';
@@ -51,8 +55,17 @@ app.get("/janken", (req, res) => {
   // ここに勝敗の判定を入れる
   // 以下の数行は人間の勝ちの場合の処理なので，
   // 判定に沿ってあいこと負けの処理を追加する
-  judgement = '勝ち';
-  win += 1;
+
+  if( cpu=='グー' && hand=='パー' ) judgement = '勝ち', win += 1;
+  else if( cpu=='チョキ' && hand=='グー' ) judgement = '勝ち', win += 1;
+  else if( cpu=='パー' && hand=='チョキ' ) judgement = '勝ち', win += 1;
+  else if( cpu=='グー' && hand=='グー' ) judgement = 'あいこ';
+  else if( cpu=='チョキ' && hand=='チョキ') judgement = 'あいこ';
+  else if( cpu=='パー' && hand=='パー' ) judgement = 'あいこ';
+  else if( cpu=='グー' && hand=='チョキ') judgement = '負け';
+  else if( cpu=='チョキ' && hand=='パー' ) judgement = '負け';
+  else if( cpu=='パー' && hand=='グー' ) judgement = '負け';
+
   total += 1;
   const display = {
     your: hand,
@@ -62,6 +75,46 @@ app.get("/janken", (req, res) => {
     total: total
   }
   res.render( 'janken', display );
+});
+
+app.get("/radio_janken", (req, res) => {
+  let hand = req.query.radio;
+  let win = Number( req.query.win );
+  let total = Number( req.query.total );
+
+  if(isNaN(win)) win = 0;
+  if(isNaN(total)) total = 0;
+
+  console.log( {hand, win, total});
+  const num = Math.floor( Math.random() * 3 + 1 );
+  let cpu = '';
+  let judgement = '';
+  if( num==1 ) cpu = 'グー';
+  else if( num==2 ) cpu = 'チョキ';
+  else cpu = 'パー';
+  // ここに勝敗の判定を入れる
+  // 以下の数行は人間の勝ちの場合の処理なので，
+  // 判定に沿ってあいこと負けの処理を追加する
+
+  if( cpu=='グー' && hand=='パー' ) judgement = '勝ち', win += 1;
+  else if( cpu=='チョキ' && hand=='グー' ) judgement = '勝ち', win += 1;
+  else if( cpu=='パー' && hand=='チョキ' ) judgement = '勝ち', win += 1;
+  else if( cpu=='グー' && hand=='グー' ) judgement = 'あいこ';
+  else if( cpu=='チョキ' && hand=='チョキ') judgement = 'あいこ';
+  else if( cpu=='パー' && hand=='パー' ) judgement = 'あいこ';
+  else if( cpu=='グー' && hand=='チョキ') judgement = '負け';
+  else if( cpu=='チョキ' && hand=='パー' ) judgement = '負け';
+  else if( cpu=='パー' && hand=='グー' ) judgement = '負け';
+
+  total += 1;
+  const display = {
+    your: hand,
+    cpu: cpu,
+    judgement: judgement,
+    win: win,
+    total: total
+  }
+  res.render( 'radio_janken', display );
 });
 
 app.get("/get_test", (req, res) => {
