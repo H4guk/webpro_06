@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>吹奏楽コンクール課題曲一覧</title>
+</head>
+<body>
+    <h2>課題曲を追加する</h2>
+    <div>
+        <form action="/music_add">
+            <label for="id">ID</label>
+            <input type="number" name="id" id="id" required><br>
+
+            <label for="year">年代</label>
+            <input type="number" name="year" id="year" required><br>
+
+            <label for="name">大会名</label>
+            <input type="text" name="name" id="name" required><br>
+
+            <label for="music1">課題曲Ⅰ</label>
+            <input type="text" name="music1" id="music1" required><br>
+
+            <label for="music2">課題曲Ⅱ</label>
+            <input type="text" name="music2" id="music2" required><br>
+
+            <label for="music3">課題曲Ⅲ</label>
+            <input type="text" name="music3" id="music3" required><br>
+
+            <label for="music4">課題曲Ⅳ</label>
+            <input type="text" name="music4" id="music4" required><br>
+
+            <label for="music5">課題曲Ⅴ</label>
+            <input type="text" name="music5" id="music5" required><br>
+
+            <input type="submit" value="追加">
+        </form>
+    </div>
+    <hr>
+  <a href="/music">キャンセル（一覧に戻る）</a>
+</body>
+</html>

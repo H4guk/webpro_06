@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>素材情報編集</title>
+</head>
+<body>
+  <h2><%= data.name %> を編集</h2>
+
+  <form action="/fgo/update/<%= data.id %>" method="get">
+    <p>
+      素材名<br>
+      <input type="text" name="name" value="<%= data.name %>" required>
+    </p>
+
+    <p>
+      クエスト名<br>
+      <input type="text" name="quest" value="<%= data.quest %>" required>
+    </p>
+
+    <p>
+      クエストの場所<br>
+      <input type="text" name="place" value="<%= data.place %>" required>
+    </p>
+
+    <p>
+      敵構成<br>
+      <input type="text" name="composition" value="<%= data.composition %>" required>
+    </p>
+
+    <p>
+      必要個数<br>
+      <input type="text" name="number" value="<%= data.number %>" required>
+    </p>
+
+    <button type="submit">更新</button><br>
+    <a href="/fgo">キャンセル（一覧に戻る）</a>
+  </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の課題曲</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>年代</td><td><%= data.year %>年</td></tr>
+    <tr><td>大会名</td><td><%= data.name %></td></tr>
+    <tr><td>課題曲Ⅰ</td><td><%= data.music1 %></td></tr>
+    <tr><td>課題曲Ⅱ</td><td><%= data.music2 %></td></tr>
+    <tr><td>課題曲Ⅲ</td><td><%= data.music3 %></td></tr>
+    <tr><td>課題曲Ⅳ</td><td><%= data.music4 %></td></tr>
+    <tr><td>課題曲Ⅴ</td><td><%= data.music5 %></td></tr>
+  </table>
+  <a href="/music_edit/<%= data.id %>">編集</a><br>
+  <a href="/music_delete/<%= data.id %>">削除</a><br>
+  <a href="/music">一覧に戻る</a>
+</body>
+</html>

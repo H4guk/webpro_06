@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= data.id %></td></tr>
+    <tr><td>ボス名</td><td><%= data.name %></td></tr>
+    <tr><td>ドロップする装備名1</td><td><%= data.drop1 %></td></tr>
+    <tr><td>ドロップする装備名2</td><td><%= data.drop2 %></td></tr>
+    <tr><td>ドロップする装備名3</td><td><%= data.drop3 %></td></tr>
+    <tr><td>ボスの場所</td><td><%= data.place %></td></tr>
+  </table>
+  <a href="/boss_edit/<%= data.id %>">編集</a><br>
+  <a href="/boss_delete/<%= data.id %>">削除</a><br>
+  <a href="/boss">一覧に戻る</a>
+</body>
+</html>

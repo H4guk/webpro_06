@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>素材を追加する</title>
+</head>
+<body>
+    <h2>素材を追加する</h2>
+    <div>
+        <form action="/fgo_add">
+            <label for="id">ID</label>
+            <input type="number" name="id" id="id" required><br>
+
+            <label for="name">素材名</label>
+            <input type="text" name="name" id="name" required><br>
+
+            <label for="drop1">クエスト名</label>
+            <input type="text" name="quest" id="quest" required><br>
+
+            <label for="drop2">クエストの場所</label>
+            <input type="text" name="place" id="place" required><br>
+
+            <label for="drop3">敵構成</label>
+            <input type="text" name="composition" id="composition" required><br>
+
+            <label for="place">必要個数</label>
+            <input type="text" name="number" id="number" required><br>
+
+            <input type="submit" value="追加">
+        </form>
+    </div>
+    <hr>
+  <a href="/fgo">キャンセル（一覧に戻る）</a>
+</body>
+</html>

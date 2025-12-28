@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>吹奏楽コンクール課題曲一覧</title>
+</head>
+<body>
+  <table>
+    <h2>吹奏楽コンクール課題曲一覧</h2>
+    <tr><th>ID</th><th>年代</th><th>大会名</th><tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr><td><%= row.id %></td>
+        <td><%= row.year %>年</td>
+        <td><a href="/music/<%= row.id %>"><%= row.name %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <a href="/public/music_add.html">課題曲を追加</a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>課題曲の編集</title>
+</head>
+<body>
+  <h2><%= data.name %> を編集</h2>
+
+  <form action="/music/update/<%= data.id %>" method="get">
+    <p>
+      年代<br>
+      <input type="number" name="year" value="<%= data.year %>" required>
+    </p>
+    
+    <p>
+      大会名<br>
+      <input type="text" name="name" value="<%= data.name %>" required>
+    </p>
+
+    <p>
+      課題曲Ⅰ<br>
+      <input type="text" name="music1" value="<%= data.music1 %>" required>
+    </p>
+
+    <p>
+      課題曲Ⅱ<br>
+      <input type="text" name="music2" value="<%= data.music2 %>" required>
+    </p>
+
+    <p>
+      課題曲Ⅲ<br>
+      <input type="text" name="music3" value="<%= data.music3 %>" required>
+    </p>
+
+    <p>
+      課題曲Ⅳ<br>
+      <input type="text" name="music4" value="<%= data.music4 %>" required>
+    </p>
+
+    <p>
+      課題曲Ⅴ<br>
+      <input type="text" name="music5" value="<%= data.music5 %>" required>
+    </p>
+
+    <button type="submit">更新</button><br>
+    <a href="/music">キャンセル（一覧に戻る）</a>
+  </form>
+</body>
+</html>
